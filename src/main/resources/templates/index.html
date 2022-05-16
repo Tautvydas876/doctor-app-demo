@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -10,23 +10,24 @@
     <title>UDEMA | Modern Educational site template</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon" th:href="@{/img/favicon.ico}">
+    <link rel="apple-touch-icon" type="image/x-icon" href="../static/img/apple-touch-icon-57x57-precomposed.png" th:href="@{/img/apple-touch-icon-57x57-precomposed.png}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="../static/img/apple-touch-icon-72x72-precomposed.png" th:href="@{/img/apple-touch-icon-72x72-precomposed.png}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="../static/img/apple-touch-icon-114x114-precomposed.png" th:href="@{/img/apple-touch-icon-114x114-precomposed.png}">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="../static/img/apple-touch-icon-144x144-precomposed.png" th:href="@{/img/apple-touch-icon-144x144-precomposed.png}">
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- BASE CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-	<link href="css/vendors.css" rel="stylesheet">
-	<link href="css/icon_fonts/css/all_icons.min.css" rel="stylesheet">
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link href="../static/css/style.css" rel="stylesheet" th:href="@{/css/style.css}">
+	<link href="../static/css/vendors.css" rel="stylesheet" th:href="@{/css/vendors.css}">
+	<link href="../static/css/icon_fonts/css/all_icons.min.css" rel="stylesheet"
+		  th:href="@{/css/icon_fonts/css/all_icons.min.css}">
 
     <!-- YOUR CUSTOM CSS -->
-    <link href="css/custom.css" rel="stylesheet">
+	<link href="../static/css/custom.css" rel="stylesheet" th:href="@{/css/custom.css}">
 
 </head>
 
@@ -37,10 +38,10 @@
 	<header class="header menu_2">
 		<div id="preloader"><div data-loader="circle-side"></div></div><!-- /Preload -->
 		<div id="logo">
-			<a href="index.html"><img src="img/logo.png" width="149" height="42" alt=""></a>
+			<a href="index.html"><img src="../static/img/logo.png" width="149" height="42" alt="" th:href="@{/img/logo.png}"></a>
 		</div>
 		<ul id="top_menu">
-			<li><a href="login.html" class="login">Login</a></li>
+			<li><a href="login.html" class="login" th:href="@{login.html}">Login</a></li>
 			<li><a href="#0" class="search-overlay-menu-btn">Search</a></li>
 			<li class="hidden_tablet"><a href="admission.html" class="btn_1 rounded">Admission</a></li>
 		</ul>
@@ -489,7 +490,7 @@
 		<div class="container margin_120_95">
 			<div class="row justify-content-between">
 				<div class="col-lg-5 col-md-12">
-					<p><img src="img/logo.png" width="149" height="42" alt=""></p>
+					<p><img src="../static/img/logo.png" width="149" height="42" alt="" th:href="@{/img/logo.png}"></p>
 					<p>Mea nibh meis philosophia eu. Duis legimus efficiantur ea sea. Id placerat tacimates definitionem sea, prima quidam vim no. Duo nobis persecuti cu. Nihil facilisi indoctum an vix, ut delectus expetendis vis.</p>
 					<div class="follow_us">
 						<ul>
@@ -522,7 +523,7 @@
 					<div id="newsletter">
 					<h6>Newsletter</h6>
 					<div id="message-newsletter"></div>
-					<form method="post" action="assets/newsletter.php" name="newsletter_form" id="newsletter_form">
+					<form method="post" action="../static/assets/newsletter.php" name="newsletter_form" id="newsletter_form" th:href="@{/assets/newsletter.php}">
 						<div class="form-group">
 							<input type="email" name="email_newsletter" id="email_newsletter" class="form-control" placeholder="Your email">
 							<input type="submit" value="Submit" id="submit-newsletter">
@@ -551,10 +552,10 @@
 	<!-- page -->
 	
 	<!-- COMMON SCRIPTS -->
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/common_scripts.js"></script>
-    <script src="js/main.js"></script>
-	<script src="assets/validate.js"></script>
+	<script src="../static/js/jquery-3.6.0.min.js" th:src="@{/js/jquery-3.6.0.min.js}"></script>
+	<script src="../static/js/common_scripts.js" th:src="@{/js/common_scripts.js}"></script>
+	<script src="../static/js/main.js" th:src="@{/js/main.js}"></script>
+	<script src="../static/assets/validate.js" th:src="@{/assets/validate.js}"></script>
 	
 </body>
 </html>
