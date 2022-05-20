@@ -3,24 +3,14 @@ package com.example.doctorappdemo.service;
 import com.example.doctorappdemo.dao.UserRepository;
 import com.example.doctorappdemo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
+
 @Service
-public class UserServiceImpl implements UserService {
-    @Autowired
+public class UserServiceImpl implements UserService{
+
     private UserRepository userRepository;
-
-
-    @Autowired
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
-
-    @Override
-    public void save(User user) {
-        user.setPass(bCryptPasswordEncoder.encode(user.getPass()));
-        userRepository.save(user);
-    }
 
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
@@ -28,7 +18,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User findByEmail(String email) {
-        return null;
+    public User findUserByEmail(String email) {
+        User rezult = userRepository.findUserByEmail(email);
+        User user = null;
+        if (rezult != null){
+            user = rezult;
+        } else{
+            throw new RuntimeException("Haven't found user: " + email);
+        }
+        return user;
     }
+
 }

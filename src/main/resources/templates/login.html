@@ -31,7 +31,7 @@
 
     <!-- YOUR CUSTOM CSS -->
     <link href="../static/css/custom.css" rel="stylesheet" th:href="@{/css/custom.css}">
-    <style>.error {color: red}</style>
+
 
 </head>
 
@@ -49,7 +49,7 @@
         <figure>
             <a href="../"><img src="../static/img/logo.png" width="149" height="42" alt="" th:src="@{/img/logo.png}"></a>
         </figure>
-        <form   th:action="@{/login}"  method="post" >
+        <form     method="post" th:action="@{/login}" th:object="${user}" >
             <div class="access_social">
                 <a href="#0" class="social_bt facebook">Login with Facebook</a>
                 <a href="#0" class="social_bt google">Login with Google</a>
@@ -58,8 +58,7 @@
             <div class="divider"><span>Or</span></div>
             <div class="form-group">
 					<span class="input" >
-                        <span th:text="${message}"></span>
-					<input  class="input_field" type="email" autocomplete="off" name="email" required minlength="8">
+					<input class="input_field" type="text" autocomplete="off" name="email" required minlength="6">
 						<label class="input_label">
 						<span class="input__label-content">Your email</span>
 					</label>
@@ -77,13 +76,9 @@
             </div>
             <span style="color: red" class="has-error" th:text="${error}"></span>
 
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
             <input class="btn_1 rounded full-width add_top_60" type="submit" value="Login" />
 
-<!--            <a class="btn_1 rounded full-width add_top_60">Login to Udema</a>-->
-            <div class="text-center add_top_10">New to Udema? <strong><a href="register.html">Sign up!</a></strong>
-            </div>
         </form>
         <div class="copy">© 2021 Udema</div>
     </aside>

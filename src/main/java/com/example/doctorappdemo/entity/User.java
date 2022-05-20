@@ -21,24 +21,24 @@ public class User {
     private String email;
 
     @Column(name = "password")
-    private String pass;
+    private String password;
 
     public User() {
     }
 
-    public User(String data, String userName, String email, String pass) {
+    public User(String data, String userName, String email, String password) {
         this.data = data;
         this.userName = userName;
         this.email = email;
-        this.pass = pass;
+        this.password = password;
     }
 
-    public User(int id, String data, String userName, String email, String pass) {
+    public User(int id, String data, String userName, String email, String password) {
         this.id = id;
         this.data = data;
         this.userName = userName;
         this.email = email;
-        this.pass = pass;
+        this.password = password;
     }
 
     public int getId() {
@@ -73,12 +73,12 @@ public class User {
         this.email = email;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String pass) {
+        this.password = pass;
     }
 
     @Override
@@ -88,7 +88,7 @@ public class User {
                 ", data='" + data + '\'' +
                 ", userName='" + userName + '\'' +
                 ", email='" + email + '\'' +
-                ", pass='" + pass + '\'' +
+                ", pass='" + password + '\'' +
                 '}';
     }
 }
